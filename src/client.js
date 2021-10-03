@@ -49,7 +49,7 @@ rl.question("> ", (string) => {
 });
 
 function get(string) {
-    client.get({ key: string }, (error, res) => error ? console.log(error) : console.log(`Key: ${string} | Value: ${res}`));
+    client.get({ key: string }, (error, res) => error ? console.log(error) : console.log(`Key: ${string} | Value: ${res.value}`));
 }
 
 function getAllKeys() {
