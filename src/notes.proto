@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+service KeyValue {
+    rpc put (MapItem) returns (noParam) {}
+    rpc get (Key) returns (Value) {}
+    rpc getAllKeys (noParam) returns (List) {}
+}
+
+message noParam {}
+
+message Key {
+    string key = 1;
+}
+
+message Value {
+    string key = 1;
+}
+
+message List {
+    repeated Key keys = 1;
+}
+
+message MapItem {
+    string key = 1;
+    string value = 2;
+}
