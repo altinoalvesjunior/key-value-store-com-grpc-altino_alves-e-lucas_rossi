@@ -16,8 +16,10 @@ const rl = readline.createInterface({
 });
 
 menu();
+waitForUserInput() 
 
 
+function waitForUserInput() {
 rl.question("> ", (string) => {
     const line = string.split(" ")[0];
 
@@ -25,7 +27,8 @@ rl.question("> ", (string) => {
     remaining.shift();
 
     const remainingString = remaining.join("");
-   
+    
+    
     switch (line) {
         case "get":
             get(remainingString);
@@ -45,15 +48,16 @@ rl.question("> ", (string) => {
 
         case "exit":
             console.log("Finalizando o programa!");
-            break;
+            return rl.close();
 
         default:
             console.log("O comando digitado não existe.");
     }
-
-    rl.close();
+    
+    waitForUserInput()
 });
 
+}
 
 function get(string) {
     client.get({ key: string }, (error, res) => error ? console.log(error) : console.log(`Key: ${string} | Value: ${res.value}`));
@@ -82,6 +86,6 @@ function put(string) {
 
 function menu() {
     console.log("-------------- MENU --------------");
-    console.log(" 1 - Para inserir nova chave e valor, digite 'put chave:valor' \n 2 - Para listar alguma chave existente em específico, digite 'get nomeChave' \n 3 - Para listar todas as chaves existente, digite 'getAllKeys'")
+    console.log(" 1 - Para inserir nova chave e valor, digite 'put chave:valor' \n 2 - Para listar alguma chave existente em específico, digite 'get nomeChave' \n 3 - Para listar todas as chaves existente, digite 'getAllKeys' \n 4 - Para sair do programa, digite 'exit'")
     console.log("----------------------------------");
 }
