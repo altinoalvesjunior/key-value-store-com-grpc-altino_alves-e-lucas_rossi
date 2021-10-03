@@ -19,6 +19,14 @@ Para utilizar o Key-Value Store, antes de rodá-lo é necessário a instalação
 > npm install
 >
 
+Caso necessário, instale também o grpc:
+>bash
+> npm install @grpc/proto-loader
+
+>bash
+> npm install grpc
+>
+
 ### Como executar o programa?
 
 Para utilizar o Key-Value Store deve-se executar as seguintes classes na ordem especificada abaixo:
