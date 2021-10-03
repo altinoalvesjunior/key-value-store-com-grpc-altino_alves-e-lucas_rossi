@@ -86,6 +86,6 @@ function put(string) {
 
 function menu() {
     console.log("-------------- MENU --------------");
-    console.log(" 1 - Para inserir nova chave e valor, digite 'put chave:valor' \n 2 - Para listar alguma chave existente em específico, digite 'get nomeChave' \n 3 - Para listar todas as chaves existente, digite 'getAllKeys' \n 4 - Para sair do programa, digite 'exit'")
+    console.log(" 1 - Para inserir nova chave e valor, digite 'put chave:valor' \n 2 - Para listar alguma chave existente em específico, digite 'get nomeChave' \n 3 - Para listar todas as chaves existente, digite 'getAllKeys' \n 4 - Para exibir este menu de ajuda, digite 'help' \n 5 - Para sair do programa, digite 'exit'")
     console.log("----------------------------------");
 }
