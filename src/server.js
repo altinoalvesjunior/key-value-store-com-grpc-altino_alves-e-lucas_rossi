@@ -3,9 +3,6 @@ const protoLoader = require('@grpc/proto-loader')
 const packageDefinition = protoLoader.loadSync('./notes.proto');
 const notesProto = grpc.loadPackageDefinition(packageDefinition);
 
-//onst path = require("path");
-//const items = grpc.load(path.resolve(__dirname, "./notes.proto"));
-
 const server = new grpc.Server();
 
 const map = new Map();

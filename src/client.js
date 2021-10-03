@@ -1,7 +1,11 @@
 const grpc = require("grpc");
-const path = require("path");
+//const path = require("path");
 
-const KeyValue = grpc.load(path.resolve(__dirname, "./notes.proto")).KeyValue;
+const protoLoader = require('@grpc/proto-loader')
+const packageDefinition = protoLoader.loadSync('./notes.proto');
+const KeyValue = grpc.loadPackageDefinition(packageDefinition).KeyValue;
+
+//const KeyValue = grpc.load(path.resolve(__dirname, "./notes.proto")).KeyValue;
 const client = new KeyValue("localhost:40073", grpc.credentials.createInsecure());
 
 const readline = require('readline');
