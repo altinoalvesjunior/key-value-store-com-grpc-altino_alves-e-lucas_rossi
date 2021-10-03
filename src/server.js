@@ -1,13 +1,16 @@
 const grpc = require("grpc");
-const path = require("path");
+const protoLoader = require('@grpc/proto-loader')
+const packageDefinition = protoLoader.loadSync('./notes.proto');
+const notesProto = grpc.loadPackageDefinition(packageDefinition);
 
-const items = grpc.load(path.resolve(__dirname, "./notes.proto"));
+//onst path = require("path");
+//const items = grpc.load(path.resolve(__dirname, "./notes.proto"));
 
 const server = new grpc.Server();
 
 const map = new Map();
 
-server.addService(items.KeyValue.service, {
+server.addService(notesProto.KeyValue.service, {
 
     get: (call, callback) => {
 		const key = call.request.key;
