@@ -42,8 +42,8 @@ Para acessar as funcionalidades do Chat basta digitar um dos comandos abaixo:
 
 | Comando                  | Como acessar                                                                     |
 |--------------------------|----------------------------------------------------------------------------------|
-| Criar nova chave e valor | put + chave:valor (eg.: put idade:21) |
-| Listar o contéudo de uma chave| get + chave (eg.: get idade) |
+| Criar nova chave e valor | put + chave:valor (e.g.: put idade:21) |
+| Listar o contéudo de uma chave| get + chave (e.g.: get idade) |
 | Listar todas as chaves    | getAllKeys |
 | Exibir o menu de ajuda | help |
 | Sair do programa | exit |
