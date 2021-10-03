@@ -21,6 +21,10 @@ rl.question("> ", (string) => {
 
     const remainingString = remaining.join("");
     switch (line) {
+        case "get":
+            get(remainingString);
+            break;
+
         case "getAllKeys":
             getAllKeys();
             break;
@@ -43,6 +47,10 @@ rl.question("> ", (string) => {
 
     rl.close();
 });
+
+function get(string) {
+    client.get({ key: string }, (error, res) => error ? console.log(error) : console.log(`Key: ${string} | Value: ${res}`));
+}
 
 function getAllKeys() {
     client.getAllKeys({}, (error, res) => {
