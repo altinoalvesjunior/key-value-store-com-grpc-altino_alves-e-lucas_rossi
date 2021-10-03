@@ -11,7 +11,7 @@ server.addService(notesProto.KeyValue.service, {
 
     get: (call, callback) => {
 		const key = call.request.key;
-		console.log(key);
+		console.log(`Chave requisitada pelo cliente: ${key}`);
 
 		if (map.has(key)) callback(null, { value: map.get(key),});
         else callback({ code: grpc.status.NOT_FOUND, details: "O item buscado, não foi encontrado!", });
@@ -22,8 +22,9 @@ server.addService(notesProto.KeyValue.service, {
 			key: string,
 		}));
 
-		callback(null, keys);
+		callback(null, {keys: keys});
 	},
+	
 	
     put: (call, callback) => {
 		const item = call.request;

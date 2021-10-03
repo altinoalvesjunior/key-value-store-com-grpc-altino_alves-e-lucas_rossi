@@ -17,6 +17,7 @@ const rl = readline.createInterface({
 
 menu();
 
+
 rl.question("> ", (string) => {
     const line = string.split(" ")[0];
 
@@ -24,6 +25,7 @@ rl.question("> ", (string) => {
     remaining.shift();
 
     const remainingString = remaining.join("");
+   
     switch (line) {
         case "get":
             get(remainingString);
@@ -51,6 +53,7 @@ rl.question("> ", (string) => {
 
     rl.close();
 });
+
 
 function get(string) {
     client.get({ key: string }, (error, res) => error ? console.log(error) : console.log(`Key: ${string} | Value: ${res.value}`));
