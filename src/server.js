@@ -35,5 +35,5 @@ server.addService(items.KeyValue.service, {
 
 server.bind("127.0.0.1:40073", grpc.ServerCredentials.createInsecure());
 
-console.log("O servidor está sendo executado no endereço: 127.0.0.1:40073");
+console.log("O servidor está sendo executado!");
 server.start();
